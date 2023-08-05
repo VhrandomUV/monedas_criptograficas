@@ -24,9 +24,9 @@ fn get_precio(_coin: &str)  -> Result<String, ureq::Error>{
     let coin_data: CoinData = serde_json::from_str(&body).unwrap();
     let usd = coin_data.market_data.current_price.usd.to_string();
     let clp = coin_data.market_data.current_price.clp.to_string();
-    let xd = format!("${} -> clp \n${} -> usd", clp, usd);
+    let resultado = format!("${} -> clp \n${} -> usd", clp, usd);
 
-    Ok(xd)
+    Ok(resultado)
 
 }
 
